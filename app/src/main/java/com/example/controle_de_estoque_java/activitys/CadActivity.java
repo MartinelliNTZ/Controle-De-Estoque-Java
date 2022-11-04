@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.example.controle_de_estoque_java.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -43,6 +45,7 @@ public class CadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cad);
         edtNome = findViewById(R.id.edtNome);
         btCad = findViewById(R.id.btCad);
+        getSupportActionBar().hide();
 
 
 
