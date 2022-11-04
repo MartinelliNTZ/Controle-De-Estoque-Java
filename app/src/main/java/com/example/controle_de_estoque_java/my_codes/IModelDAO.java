@@ -1,8 +1,15 @@
 package com.example.controle_de_estoque_java.my_codes;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.example.controle_de_estoque_java.helpers.DbHelper;
+
 import java.util.List;
 
 public interface IModelDAO<T> {
+
+
         /**Método que salva o objeto selecionado no SQLite*/
         public boolean salvar(T t);
         /**Método que atualiza o objeto selecionado no SQLite*/
