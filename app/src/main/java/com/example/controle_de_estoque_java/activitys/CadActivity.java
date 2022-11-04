@@ -53,7 +53,7 @@ public class CadActivity extends AppCompatActivity {
                     produtoDAO.salvar(produto);
                     Toast.makeText(CadActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
                 }
-                finish();
+                finishAfterTransition();
             }
         });
 

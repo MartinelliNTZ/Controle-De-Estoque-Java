@@ -1,6 +1,7 @@
 package com.example.controle_de_estoque_java.activitys;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -53,7 +54,8 @@ public class HomeActivity extends AppCompatActivity {
         btNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CadActivity.class));
+                startActivity(new Intent(getApplicationContext(), CadActivity.class),
+                        ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this).toBundle());
             }
         });
         btExcluir.setOnClickListener(new View.OnClickListener() {
