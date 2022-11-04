@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,12 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-    private AppCompatButton btNovo;
     private ListView listView;
     private SQLiteDatabase dados;
     private final String NOME_DATABASE = "usuarios";
     private ArrayList<String> resultado;
-    private Button btExcluir, btNovoo;
+    private Button btExcluir, btNovo;
 
     @Override
     protected void onResume() {
@@ -48,13 +48,31 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     private void linkage(){
-        btNovoo = findViewById(R.id.btNovo);
-        btNovoo.setOnClickListener(new View.OnClickListener() {
+        btNovo = findViewById(R.id.btNovo);
+        btExcluir = findViewById(R.id.btExcluir);
+        btNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), CadActivity.class));
             }
         });
+        btExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Handler handler = new Handler();
+                btExcluir.setAlpha(.3f);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btExcluir.setAlpha(1.0f);
+                    }
+                }, 150);
+
+
+
+            }
+        });
+
     }
 
 
