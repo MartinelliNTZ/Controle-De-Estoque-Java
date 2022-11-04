@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        startActivity(new Intent(getApplicationContext(), CadActivity.class));
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
     }
 
     @Override

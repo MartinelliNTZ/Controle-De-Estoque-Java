@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,7 +51,9 @@ public class CadActivity extends AppCompatActivity {
                             Integer.parseInt(edtQuantidade.getText().toString()));
                     ProdutoDAO produtoDAO = new ProdutoDAO(getApplicationContext());
                     produtoDAO.salvar(produto);
+                    Toast.makeText(CadActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
 

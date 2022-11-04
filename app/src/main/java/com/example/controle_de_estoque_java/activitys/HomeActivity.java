@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     private SQLiteDatabase dados;
     private final String NOME_DATABASE = "usuarios";
     private ArrayList<String> resultado;
+    private Button btExcluir, btNovoo;
 
     @Override
     protected void onResume() {
@@ -41,13 +43,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
+        linkage();
 
 
-
-
-
-
-
+    }
+    private void linkage(){
+        btNovoo = findViewById(R.id.btNovo);
+        btNovoo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CadActivity.class));
+            }
+        });
     }
 
 
