@@ -40,6 +40,8 @@ public class CadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cad);
         getSupportActionBar().hide();
         linkage();
+        Bundle bundle = getIntent().getExtras();
+
 
     }
     private void linkage(){
