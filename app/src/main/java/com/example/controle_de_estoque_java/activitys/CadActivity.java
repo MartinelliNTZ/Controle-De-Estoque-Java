@@ -8,10 +8,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.controle_de_estoque_java.R;
 import com.example.controle_de_estoque_java.helpers.ProdutoDAO;
 import com.example.controle_de_estoque_java.models.Produto;
+import com.example.controle_de_estoque_java.my_codes.CustomKeyBoard;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class CadActivity extends AppCompatActivity {
     private EditText edtQuantidade;
     private Button btCad;
     private boolean edicao;
+    private ConstraintLayout consCad;
 
 
     @Override
@@ -40,6 +43,7 @@ public class CadActivity extends AppCompatActivity {
 
     }
     private void linkage(){
+        consCad = findViewById(R.id.consCad);
         edtDescricao = findViewById(R.id.edtDescricao);
         edtQuantidade = findViewById(R.id.edtQuantidade);
         btCad = findViewById(R.id.btCad);
@@ -54,6 +58,13 @@ public class CadActivity extends AppCompatActivity {
                     Toast.makeText(CadActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
                 }
                 finishAfterTransition();
+            }
+        });
+        consCad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Fecha o teclado ao clicar na tela
+                CustomKeyBoard.keyboardHidenn(getApplicationContext());
             }
         });
 
