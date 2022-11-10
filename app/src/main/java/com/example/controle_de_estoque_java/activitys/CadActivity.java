@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class CadActivity extends AppCompatActivity {
 
 
+
     private TextInputEditText edtDescricao;
     private EditText edtQuantidade;
     private Button btCad;
@@ -41,9 +42,11 @@ public class CadActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         linkage();
         Bundle bundle = getIntent().getExtras();
+      // edicao = bundle.getInt("tipo") != 0;
 
 
     }
+
     private void linkage(){
         consCad = findViewById(R.id.consCad);
         edtDescricao = findViewById(R.id.edtDescricao);

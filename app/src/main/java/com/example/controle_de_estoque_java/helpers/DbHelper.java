@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
     public static int VERSION= 1;
-    public static String NOME_DB= "DB_MAQUININHA_BI2";
+    public static String NOME_DB= "DB_ESTOQUE_2";
     public static String TABELA_PRODUTOS= "produto";
     private SQLiteDatabase sqLiteDatabasee;
 
@@ -31,8 +31,6 @@ public class DbHelper extends SQLiteOpenHelper {
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "quantidade INTEGER NOT NULL," +
                 "descricao TEXT NOT NULL);";
-
-
         try {
             sqLiteDatabasee.execSQL(sql);
             Log.i("INFO DB COX","Sucesso ao criar tabela:  "+TABELA_PRODUTOS);

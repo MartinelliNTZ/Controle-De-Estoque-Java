@@ -32,6 +32,8 @@ public class HomeActivity extends AppCompatActivity {
     private final String NOME_DATABASE = "usuarios";
     private ArrayList<String> resultado;
     private Button btExcluir, btNovo;
+    private final int TIPO_CRIACAO = 0;
+    private final int TIPO_MODIFICACAO = 1;
 
     @Override
     protected void onResume() {
@@ -54,8 +56,11 @@ public class HomeActivity extends AppCompatActivity {
         btNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
+                intent.putExtra("tipo",TIPO_CRIACAO);
                 startActivity(new Intent(getApplicationContext(), CadActivity.class),
                         ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this).toBundle());
+
             }
         });
         btExcluir.setOnClickListener(new View.OnClickListener() {

@@ -1,7 +1,8 @@
 package com.example.controle_de_estoque_java.models;
 
 public class Produto {
-    private Long id;
+
+    private Long id;//Auto gerado pelo SQLite
     private String descricao;
     private int quantidade;
 
@@ -10,6 +11,13 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
+    public Produto(Long id, String descricao, int quantidade) {
+        this.id = id;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+    }
+    /**
+     * id do produto é gerado pelo auto increment do SQLite*/
     public Long getId() {
         return id;
     }
@@ -17,7 +25,8 @@ public class Produto {
     public void setId(Long id) {
         this.id = id;
     }
-
+    /**
+     * Descrição do produto ou nome*/
     public String getDescricao() {
         return descricao;
     }
@@ -25,7 +34,8 @@ public class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
+    /**
+     * Quantidade do produto*/
     public int getQuantidade() {
         return quantidade;
     }
