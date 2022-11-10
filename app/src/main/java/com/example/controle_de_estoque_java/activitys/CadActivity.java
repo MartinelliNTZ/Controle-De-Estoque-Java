@@ -2,6 +2,7 @@ package com.example.controle_de_estoque_java.activitys;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import com.example.controle_de_estoque_java.R;
 import com.example.controle_de_estoque_java.helpers.ProdutoDAO;
 import com.example.controle_de_estoque_java.models.Produto;
 import com.example.controle_de_estoque_java.my_codes.CustomKeyBoard;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -27,12 +29,14 @@ public class CadActivity extends AppCompatActivity {
     private Button btCad;
     private boolean edicao;
     private ConstraintLayout consCad;
+    private Produto currentProduto;
+    private FloatingActionButton fab;
 
 
     @Override
     protected void onResume() {
         super.onResume();
-       // listarDados();
+
     }
 
     @Override
@@ -42,15 +46,29 @@ public class CadActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         linkage();
         Bundle bundle = getIntent().getExtras();
-      // edicao = bundle.getInt("tipo") != 0;
+       edicao = bundle.getInt("tipo") != 0;
+       if(edicao){
+           currentProduto =(Produto) bundle.getSerializable("produto");
+           Log.i("Cox", "Modo edição Produto:"+currentProduto.getDescricao());
+           incluirDados();
+           btCad.setText("EDITAR");
+       }else{
+           Log.i("Cox", "Modo create");
+           btCad.setText("CADASTRAR");
+       }
 
 
+    }
+    private void incluirDados(){
+        edtDescricao.setText(currentProduto.getDescricao());
+        edtQuantidade.setText(""+currentProduto.getQuantidade());
     }
 
     private void linkage(){
         consCad = findViewById(R.id.consCad);
         edtDescricao = findViewById(R.id.edtDescricao);
         edtQuantidade = findViewById(R.id.edtQuantidade);
+        fab = findViewById(R.id.fab);
         btCad = findViewById(R.id.btCad);
         btCad.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +88,14 @@ public class CadActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Fecha o teclado ao clicar na tela
                 CustomKeyBoard.keyboardHidenn(getApplicationContext());
+            }
+        });
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CadActivity.this, "Cancelado", Toast.LENGTH_SHORT).show();
+                finish();
+                releaseInstance();
             }
         });
 

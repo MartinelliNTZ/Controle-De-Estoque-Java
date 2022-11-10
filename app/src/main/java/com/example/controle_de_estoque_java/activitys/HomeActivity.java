@@ -22,6 +22,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 
 import com.example.controle_de_estoque_java.R;
+import com.example.controle_de_estoque_java.models.Produto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,10 +57,12 @@ public class HomeActivity extends AppCompatActivity {
         btNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(getApplicationContext(), HomeActivity.class);
-                intent.putExtra("tipo",TIPO_CRIACAO);
-                startActivity(new Intent(getApplicationContext(), CadActivity.class),
-                        ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this).toBundle());
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("produto", new Produto(1L,"Batom",5));
+                Intent intent =new Intent(getApplicationContext(), CadActivity.class);
+                intent.putExtra("tipo",TIPO_MODIFICACAO);
+                intent.putExtras(bundle);
+                startActivity(intent);
 
             }
         });
