@@ -73,14 +73,12 @@ public class CadActivity extends AppCompatActivity {
         btCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isOk()) {
-                    Produto produto = new Produto(edtDescricao.getText().toString(),
-                            Integer.parseInt(edtQuantidade.getText().toString()));
-                    ProdutoDAO produtoDAO = new ProdutoDAO(getApplicationContext());
-                    produtoDAO.salvar(produto);
-                    Toast.makeText(CadActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
+                if (edicao){
+                    alterarProduto();
+                }else{
+                    salvarProduto();
                 }
-                finishAfterTransition();
+
             }
         });
         consCad.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +96,28 @@ public class CadActivity extends AppCompatActivity {
                 releaseInstance();
             }
         });
+
+    }
+    private void salvarProduto(){
+        if (isOk()) {
+            Produto produto = new Produto(edtDescricao.getText().toString(),
+            Integer.parseInt(edtQuantidade.getText().toString()));
+            ProdutoDAO produtoDAO = new ProdutoDAO(getApplicationContext());
+            produtoDAO.salvar(produto);
+            Toast.makeText(CadActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
+        }
+            finishAfterTransition();
+            releaseInstance();
+    }
+    private void alterarProduto(){
+        if (isOk()){
+            currentProduto.setDescricao(edtDescricao.getText().toString());
+            currentProduto.setQuantidade(Integer.parseInt(edtQuantidade.getText().toString()));
+            ProdutoDAO produtoDAO = new ProdutoDAO(getApplicationContext());
+            produtoDAO.atualizar(currentProduto);
+        }
+        finishAfterTransition();
+        releaseInstance();
 
     }
     private boolean isOk(){
