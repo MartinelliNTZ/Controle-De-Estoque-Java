@@ -1,30 +1,26 @@
 # Controle-De-Estoque-Java
  - TRabalho de Java
-        /*
-        * <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2006 The Android Open Source Project
+ 
+                try{User usuarioSelect = listaUsers.get(i);
+                    AlertDialog.Builder aler =new AlertDialog.Builder(MainActivity.this);
+                    aler.setMessage("Deseja excluir a tarefa: "+usuarioSelect.getNome()+" ?");
+                    aler.setTitle("Excluir itens.");
+                    aler.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String[] args= {usuarioSelect.getId().toString()};
+                            dados.delete("pessoas","id=?",args);
+                            Toast.makeText(MainActivity.this, "Deletado.", Toast.LENGTH_SHORT).show();
+                            listarDados();
+                        }
+                    });
+                    aler.setNegativeButton("Não", null);
+                    aler.setIcon(R.drawable.ic_delete);
+                    aler.create();
+                    aler.show();
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAppearance="?android:attr/textAppearanceListItemSmall"
-    android:gravity="center_vertical"
-    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
-    android:textColor="@color/suaCor"
-/>*/
+                }catch (Exception e){
+                    Log.i("INFO","Erro: "+e.getMessage());
+                }
+                return false;
+            }
