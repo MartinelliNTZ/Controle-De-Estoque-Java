@@ -14,23 +14,24 @@
 
 ## Página inicial    
 
-    <img src="apresentation/listview.png" width= "320px" height ="600px">
+ -   <img src="apresentation/listview.png" width= "360px" height ="800px">
 
 ## Página de cadastro 
 
-    <img  src="apresentation/cadastro.png" width= "320px" height ="600px"> 
+-    <img  src="apresentation/cadastro.png" width= "360px" height ="800px"> 
 
 ## Página de atualização do produto  
 
  - A janela de edição é a mesma do cadastro porém são carregadas de formas diferentes para cada caso
-    <img  src="apresentation/editar.png" width= "320px" height ="600px">  
+    <img  src="apresentation/editar.png" width= "360px" height ="800px">  
 
 ## Apagando itens
 
  - Os itens são excluidos com um click longo no itens desejado
-    <img  src="apresentation/deletar.png" width= "360px" height ="800px">
+
+ -   <img  src="apresentation/deletar.png" width= "360px" height ="800px">
 
 ## Vídeo de apresentação   
-<a href="https://youtube.com/shorts/sJAK3umPJ0E?feature=share" title="Vídeo de Apresentação"><img src="apresentation/cadastro.png" alt="Alternate Text" width= "320px" height ="600px"/></a>
+<a href="https://youtube.com/shorts/sJAK3umPJ0E?feature=share" title="Vídeo de Apresentação"><img src="apresentation/cadastro.png" alt="Alternate Text" width= "360px" height ="800px"/></a>
  
                
