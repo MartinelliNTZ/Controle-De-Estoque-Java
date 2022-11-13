@@ -13,14 +13,15 @@
     Android Studio.
 
 ## Página inicial    
-<img src="apresentation/listview.png"></img>
+<img src="apresentation/listview.png" width= "320px" height ="600px">
 ## Página de cadastro 
-<img width="200px">
-  ![](../../../../Downloads/Compressed/apresentation/cadastro.png)
-  </img>
+<img  src="apresentation/cadastro.png" width= "320px" height ="600px">  
 ## Página de atualização do produto  
-  ![](../../../../Downloads/Compressed/apresentation/editar.png)
+ - A janela de edição é a mesma do cadastro porém são carregadas de formas diferentes para cada caso
+<img  src="apresentation/editar.png" width= "320px" height ="600px">  
 ## Apagando itens
+ - Os itens são excluidos com um click longo no itens desejado
+<img  src="apresentation/deletar.png" width= "320px" height ="600px">
 ## Vídeo de apresentação   
 
  
