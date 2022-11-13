@@ -43,7 +43,7 @@ public class CadActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         linkage();
         Bundle bundle = getIntent().getExtras();
-       edicao = bundle.getInt("tipo") != 0;
+        edicao = bundle.getInt("tipo") != 0;
        if(edicao){
            currentProduto =(Produto) bundle.getSerializable("produto");
            Log.i("Cox", "Modo edição Produto:"+currentProduto.getDescricao());
