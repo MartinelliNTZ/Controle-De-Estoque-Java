@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onResume();
         listardados();
 
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent =new Intent(getApplicationContext(), CadActivity.class);
                 intent.putExtra("tipo", TIPO_CRIACAO);
-
                 startActivity(intent);
 
             }
